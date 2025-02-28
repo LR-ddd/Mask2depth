@@ -8,7 +8,7 @@ It contains Mask2depth code and comparative experimental data
 
 > **Important Notice**  
 > This project is currently undergoing refactoring and encapsulation. The codebase is **unstable**!  
-> Expected completion date: **Month DD, 2023** (~2 weeks from now).  
+> Expected completion date: 2025.03.15 (2-3 weeks from now).  
 > Do **not** use this in production until the official release.
 
 ---
