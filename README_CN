@@ -1,0 +1,26 @@
+# Project Name (代码封装接口中) 🚧
+
+![Development Status](https://img.shields.io/badge/status-封装中-orange?style=flat-square)
+![Estimated Completion](https://img.shields.io/badge/预计完成-2023-XX-XX-blue?style=flat-square)
+
+> **重要提示**  
+> 本项目代码正在重构和封装中，暂不稳定！  
+> 预计完成时间：**2025.03.15**（约半个月后）  
+> 正式版本发布前，请勿用于生产环境。
+
+---
+
+## 当前阶段说明
+
+- **代码状态**: 正在将核心功能模块化封装，优化架构和接口设计。
+- **主要任务**: 
+  - 完善单元测试和文档
+  - 设计可扩展的API接口
+- **风险提示**: 
+  - 现有代码可能包含临时调试逻辑
+  - 部分功能接口会频繁变动
+  - 依赖库版本尚未冻结
+
+---
+
+## 临时使用说明（仅限测试）
