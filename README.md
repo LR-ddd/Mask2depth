@@ -69,7 +69,13 @@ python deploy_pytorch.py
 ```
 后续文章录用，我们会将引用的内容推送
 ```bibtex
-Liao Bin and Zhou BaoPing and Li XiaoFei and Qiu GuoYing. (2025). Mask2depth:Depth-Guided Boundary Learning for Agricultural Image Segmentation [Unpublished manuscript]. URL[https://github.com/LR-ddd/Mask2depth]
+@unpublished{Liao2024:mask2depth,
+  author    = {Bin Liao and Baoping Zhou and Xiaofei Li and Guoying Qiu},
+  title     = {Mask2Depth: Depth-Guided Boundary Learning for Agricultural Image Segmentation},
+  note      = {Under Review},
+  year      = {2025},
+  url       = {https://github.com/LR-ddd/Mask2depth},
+}
 ```
 许可证
 本示例代码遵循 LICENSE 许可协议发布。
