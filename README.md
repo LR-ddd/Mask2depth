@@ -12,3 +12,12 @@ Mask2Depth在三种对边界敏感的农业场景超取得了显著成效。边�
 
 ![](datas/vision.png).
 
+## Getting Started
+我们建议使用conda虚拟环境，“Mask2Dpeth”的安装命令如下
+
+```bash
+conda create -n mask2depth -y python=3.10
+conda activate mask2depth
+
+pip install -e .
+```
