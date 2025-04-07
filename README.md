@@ -41,5 +41,12 @@ python utils.py
 ```bash
 python train.py
 ```
-
+mask2depth的模型权重将保存到yaml文件中指定的save_path目录
+## 执行推理
+因为我们考虑到用户需要自己指定不同类别的颜色输出，所以我们的推理过程需要自己指定各类别的颜色
+请在deploy_torch.py文件中，输入需要的颜色
+执行下面命令开启推理
+```bash
+python deploy_pytorch.py
+```
 
