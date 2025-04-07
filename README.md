@@ -57,7 +57,6 @@ python deploy_pytorch.py
 ## 引用
 
 如果需要使用我们的工作，请引用:
-
 ```bibtex
 @article{Bochkovskii2024:arxiv,
   author     = {Aleksei Bochkovskii and Ama\"{e}l Delaunoy and Hugo Germain and Marcel Santos and
@@ -68,7 +67,15 @@ python deploy_pytorch.py
   url        = {https://arxiv.org/abs/2410.02073},
 }
 ```
-
+后续文章录用，我们会将引用的内容推送
 ```bibtex
 Liao Bin and Zhou BaoPing and Li XiaoFei and Qiu GuoYing. (2025). Mask2depth:Depth-Guided Boundary Learning for Agricultural Image Segmentation [Unpublished manuscript]. URL[https://github.com/LR-ddd/Mask2depth]
 ```
+许可证
+本示例代码遵循 LICENSE 许可协议发布。
+模型权重文件遵循 LICENSE 许可协议发布。
+
+致谢
+我们的代码库基于多项开源贡献构建，完整说明请参阅致谢文件。
+本工作所引用的完整参考文献及使用数据集清单请查阅论文。
+
