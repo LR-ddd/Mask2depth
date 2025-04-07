@@ -1,62 +1,61 @@
-## Mask2depth:Depth-Guided Boundary Learning for Agricultural Image Segmentation
-这款模型依赖零样本深度估计模型Depth_Pro的深度权重信息**[Depth Pro: Sharp Monocular Metric Depth in Less Than a Second](https://arxiv.org/abs/2410.02073)**对以下几位作者致以崇高的敬意
-*Aleksei Bochkovskii, Amaël Delaunoy, Hugo Germain, Marcel Santos, Yichao Zhou, Stephan R. Richter, and Vladlen Koltun*.
+## Mask2Depth: Depth-Guided Boundary Learning for Agricultural Image Segmentation
+This model leverages depth weight information from the zero-shot depth estimation model ​​Depth Pro**[Depth Pro: Sharp Monocular Metric Depth in Less Than a Second](https://arxiv.org/abs/2410.02073)**. We extend our highest respect to its authors:
+Aleksei Bochkovskii, Amaël Delaunoy, Hugo Germain, Marcel Santos, Yichao Zhou, Stephan R. Richter, and Vladlen Koltun.
 
-我们的工作由以下几位同事共同完成
-*Liao Bin,Zhou BaoPing,Li XiaoFei, Qiu GuoYing*.
+Our work is collaboratively developed by:
+Bin Liao, Baoping Zhou, Xiaofei Li, Guoying Qiu.
 
 ![](datas/network.jpg)
 
 
-Mask2Depth在三种对边界敏感的农业场景超取得了显著成效。边界定量分析显示，在5像素容差范围内边界F1分数相较于传统方法提升2-5倍。可视化验证证实其对叶片断裂、土壤伪影等干扰具有卓越鲁棒性。本研究推动了边界敏感的农业视觉系统发展，为精细定位的精准农业应用提供新范式。我们的数据同样做了开源，数据链接为**[https://www.scidb.cn/detail?dataSetId=0dadce6de3c44354bcd73e09e7699410]**.
+Mask2Depth demonstrates exceptional performance in three boundary-sensitive agricultural scenarios. Quantitative boundary analysis reveals 2-5× improvement in boundary F1-score within 5-pixel tolerance compared to conventional methods. Visual validations confirm superior robustness against leaf fragmentation and soil artifact interference. This research advances boundary-aware agricultural vision systems, establishing a new paradigm for precision agriculture applications requiring fine-grained localization.
+Our dataset is publicly available at ​​ScienceDB**[https://www.scidb.cn/detail?dataSetId=0dadce6de3c44354bcd73e09e7699410]**​​.
 
 ![](datas/vision.png).
 
-## 开始安装
-我们建议使用conda虚拟环境，“Mask2Dpeth”的安装命令如下
-
+Installation
+We recommend using a conda virtual environment. Install Mask2Depth with:
 ```bash
 conda create -n mask2depth -y python=3.10
 conda activate mask2depth
 
 pip install -e .
 ```
-深度信息权重下载
+Download depth weights:
 ```bash
 sh get_pretrained_models.sh
 ```
 
-## 执行训练
-首先需要修改src/mask2depth/cfg/config.yaml文件，请务必按照里面写的用法修改训练必须配置
-**执行如下命令获取COCO格式标注文件的类别权重**
-!!! 请注意是获取训练标注文件的类别权重
+## Training
+Modify required configurations in src/mask2depth/cfg/config.yaml
+​​Generate class weights for COCO-format annotations​​:
+
 ```bash
 cd src/mask2depth
 
 python utils.py
 ```
-将类别权重导入到config.yaml文件
-修改yaml文件的训练数据集和验证数据集地址
-执行下面命令
+Update class weights in config.yaml and specify dataset paths
+
+## Start training:
+Modify the training and validation dataset paths in the YAML configuration file​
 ```bash
 python train.py
 ```
-mask2depth的模型权重将保存到yaml文件中指定的save_path目录
+The Mask2Depth model weights will be saved to the save_path directory specified in the YAML file​
 
-## 执行推理
-因为我们考虑到用户需要自己指定不同类别的颜色输出，所以我们的推理过程需要自己指定各类别的颜色
-请在deploy_torch.py文件中，输入需要的颜色
-执行下面命令开启推理
+## Inference
+Customize class colors in deploy_torch.py, then execute:
 ```bash
 python deploy_pytorch.py
 ```
-## 性能评估
-后续我会将完善后的评估BF1指标的代码推送
-其他指标包括PA，MIOU将会在训练阶段输出
 
-## 引用
+## Evaluation
+Boundary F1 (BF1) metric code will be updated subsequently.
+Other metrics (PA, mIoU) are output during training.
 
-如果需要使用我们的工作，请引用:
+## Citation
+If using our work, please cite:
 ```bibtex
 @article{Bochkovskii2024:arxiv,
   author     = {Aleksei Bochkovskii and Ama\"{e}l Delaunoy and Hugo Germain and Marcel Santos and
@@ -67,7 +66,7 @@ python deploy_pytorch.py
   url        = {https://arxiv.org/abs/2410.02073},
 }
 ```
-后续文章录用，我们会将引用的内容推送
+Pending paper acceptance, please use:
 ```bibtex
 @unpublished{Liao2024:mask2depth,
   author    = {Bin Liao and Baoping Zhou and Xiaofei Li and Guoying Qiu},
@@ -77,11 +76,10 @@ python deploy_pytorch.py
   url       = {https://github.com/LR-ddd/Mask2depth},
 }
 ```
-许可证
-本示例代码遵循 LICENSE 许可协议发布。
-模型权重文件遵循 LICENSE 许可协议发布。
+## License
+This sample code is released under the LICENSE.
+Model weights are distributed under the LICENSE.
 
-致谢
-我们的代码库基于多项开源贡献构建，完整说明请参阅致谢文件。
-本工作所引用的完整参考文献及使用数据集清单请查阅论文。
-
+## Acknowledgements
+Our codebase builds upon multiple open-source contributions (see ACKNOWLEDGEMENTS.md).
+Complete references and dataset details are available in our paper.
