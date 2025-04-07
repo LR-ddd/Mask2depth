@@ -5,6 +5,6 @@
 我们的团队由以下几位同事共同完成
 *Liao Bin,Zhou BaoPing,Li XiaoFei, Qiu GuoYing*.
 
-![](data/network.jpg)
+![](datas/network.jpg)
 
 
