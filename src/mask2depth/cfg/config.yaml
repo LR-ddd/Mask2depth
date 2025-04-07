@@ -1,0 +1,83 @@
+# 请注意，Mask2Depth使用的coco格式的标注文件，索引从0开始，如果索引从1开始运行会报错，请一定要修改
+# 使用前请执行python utils.py获取各类别的权重，其中background_id = num_class  # 背景类索引为类别总数
+# 然后将得到的权重填入到下面class_weights字段
+# 运行前要指定checkpoint_uri预训练权重地址
+# 使用的是A800显卡
+
+#---------------------------
+#验证执行python deploy_pytorch.py 颜色自己指定
+
+# Note: Mask2Depth uses COCO-formatted annotation files with 0-based indexing. If your index starts from 1, errors will occur. You MUST modify this accordingly.
+# Before use, run `python utils.py` to obtain category weights, where background_id = num_class  # Background class index equals total number of classes
+# Then populate the obtained weights in the class_weights field below
+# Specify the checkpoint_uri for pretrained weights path before running
+# Tested on A800 GPUs
+
+#---------------------------
+# For validation, run:  
+# python deploy_pytorch.py (specify colors as needed)
+
+
+project:
+  name: "Images Segmentation"
+  description: "This project focuses on instance segmentation using COCO dataset."
+  num_class: 4
+  classes:
+    - id: 0
+      name: "leaf"
+    - id: 1
+      name: "cylte"
+    - id: 2
+      name: "stem"
+    - id: 3
+      name: "bud"
+  valid_categories: [ 0, 1, 2,3 ]
+  # 需要加 1个，最后一个为背景的权重，需要自己计算类比的占比
+  class_weights: [2.34, 2.89, 5.00, 3.71,1.00]
+  # classes:
+  #   - id: 0
+  #     name: "house"
+  #   - id: 1
+  #     name: "sengling"
+  #   - id: 2
+  #     name: "lu"
+  #   - id: 3
+  #     name: "caodi"
+  #   - id: 4
+  #     name: "zuowu"
+  #   - id: 5
+  #     name: "caocong"
+  #   - id: 6
+  #     name: "huangdi"
+  #   - id: 7
+  #     name: "he"
+  #   - id: 8
+  #     name: "guanmu"
+  #   - id: 9
+  #     name: "xiaosengling"
+  #   - id: 10
+  #     name: "shuichi"
+  # valid_categories: [ 0, 1, 2,3 ,4,5,6,7,8,9,10]
+
+
+training:
+  batch_size: 1
+  num_epochs: 50
+  learning_rate: 0.0001
+  optimizer: "AdamW"
+  #权重文件地址
+  checkpoint_uri: "./checkpoints/depth_pro.pt"
+  save_path: "./checkpoints"
+  num_workers: 0
+
+
+dataset:
+  train_root: "/root/autodl-tmp/codes/ml-depth-pro-main/data/cotton_datas/images/train"
+  val_root: "/root/autodl-tmp/codes/ml-depth-pro-main/data/cotton_datas/images/val"
+  train_ann_file: "/root/autodl-tmp/codes/ml-depth-pro-main/data/cotton_datas/labels/train.json"
+  val_ann_file: "/root/autodl-tmp/codes/ml-depth-pro-main/data/cotton_datas/labels/val.json"
+
+
+logging:
+  print_freq: 50
+  save_model_freq: 5
