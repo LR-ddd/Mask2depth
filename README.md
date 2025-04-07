@@ -54,4 +54,21 @@ python deploy_pytorch.py
 后续我会将完善后的评估BF1指标的代码推送
 其他指标包括PA，MIOU将会在训练阶段输出
 
+## 引用
 
+如果需要使用我们的工作，请引用:
+
+```bibtex
+@article{Bochkovskii2024:arxiv,
+  author     = {Aleksei Bochkovskii and Ama\"{e}l Delaunoy and Hugo Germain and Marcel Santos and
+               Yichao Zhou and Stephan R. Richter and Vladlen Koltun}
+  title      = {Depth Pro: Sharp Monocular Metric Depth in Less Than a Second},
+  journal    = {arXiv},
+  year       = {2024},
+  url        = {https://arxiv.org/abs/2410.02073},
+}
+```
+
+```bibtex
+Liao Bin and Zhou BaoPing and Li XiaoFei and Qiu GuoYing. (2025). Mask2depth:Depth-Guided Boundary Learning for Agricultural Image Segmentation [Unpublished manuscript]. URL[https://github.com/LR-ddd/Mask2depth]
+```
