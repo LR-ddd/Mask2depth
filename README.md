@@ -28,3 +28,10 @@ sh get_pretrained_models.sh
 
 ## 执行训练
 首先需要修改src/mask2depth/cfg/config.yaml文件，请务必按照里面写的用法修改训练必须配置
+**执行如下命令获取COCO格式标注文件的类别权重**
+```bash
+cd src/mask2depth
+
+python utils.py
+```
+
